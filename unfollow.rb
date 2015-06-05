@@ -1,10 +1,10 @@
 require 'twitter' 
 
 client = Twitter::REST::Client.new do |config|
-	config.consumer_key = ""
-	config.consumer_secret = ""
-	config.access_token = ""
-	config.access_token_secret = ""
+  config.consumer_key = ""
+  config.consumer_secret = ""
+  config.access_token = ""
+  config.access_token_secret = ""
 end
 
 # ユーザーidを自分のidに変える
@@ -27,6 +27,6 @@ if unfollower.size < 21
 else
   while unfollower.size > 21 do
     unfollower.pop
-	end
+  end
   client.unfollow(unfollower)
 end
