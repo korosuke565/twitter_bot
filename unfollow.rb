@@ -12,21 +12,21 @@ user = @OgiBot_777
 
 follower_ids = []
 client.follower_ids(user).each do |id|
-	follower_ids.push(id)
+  follower_ids.push(id)
 end
 
 friend_ids = []
 client.friend_ids(user).each do |id|
-	friend_ids.push(id)
+  friend_ids.push(id)
 end
 
 unfollower = friend_ids - follower_ids 
 
 if unfollower.size < 21
-	client.unfollow(unfollower)
+  client.unfollow(unfollower)
 else
-	while unfollower.size > 21 do
-		unfollower.pop
+  while unfollower.size > 21 do
+    unfollower.pop
 	end
-	client.unfollow(unfollower)
+  client.unfollow(unfollower)
 end
