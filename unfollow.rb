@@ -1,10 +1,10 @@
-require 'twitter' 
+require 'twitter'
 
 client = Twitter::REST::Client.new do |config|
-  config.consumer_key = "YkOxIowIeUmhz5lARy7jeupgq"
-  config.consumer_secret = "MTpiUrabcqDs5lH5HUnQWUbqbxaxNFqm5JE7tcKKZz3b9WJ7uv"
-  config.access_token = "3022103192-iu6CD27PfznpZGlDhF2m6qBhnSHcoupCqSnwVPl"
-  config.access_token_secret = "eUjPl6OKqSXPLEHF9OftrUmU5ZHG8DhqVnegGUq8f7Mj3"
+  config.consumer_key = ""
+  config.consumer_secret = ""
+  config.access_token = ""
+  config.access_token_secret = ""
 end
 
 # ユーザーidを自分のidに変える
@@ -20,7 +20,7 @@ client.friend_ids(user).each do |id|
   friend_ids.push(id)
 end
 
-unfollower = friend_ids - follower_ids 
+unfollower = friend_ids - follower_ids
 
 if unfollower.size < 21
   client.unfollow(unfollower)
